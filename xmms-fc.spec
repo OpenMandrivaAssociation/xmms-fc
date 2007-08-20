@@ -10,7 +10,7 @@ Group: Sound
 URL: http://xmms-fc.sourceforge.net/
 Source:	http://prdownloads.sourceforge.net/xmms-fc/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildPrereq: libxmms-devel
+BuildRequires: libxmms-devel
 Requires: xmms
 
 %description
