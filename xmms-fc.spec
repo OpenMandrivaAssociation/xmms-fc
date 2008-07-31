@@ -1,5 +1,5 @@
 %define version 0.5.4
-%define release %mkrel 2
+%define release %mkrel 4
 
 Name: xmms-fc
 Summary: Future Composer plugin for XMMS
