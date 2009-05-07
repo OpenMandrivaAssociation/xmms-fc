@@ -1,11 +1,11 @@
 %define version 0.5.4
-%define release %mkrel 5
+%define release %mkrel 3
 
 Name: xmms-fc
 Summary: Future Composer plugin for XMMS
 Version: %{version}
 Release: %{release}
-License: GPL
+License: GPLv2+
 Group: Sound
 URL: http://xmms-fc.sourceforge.net/
 Source:	http://prdownloads.sourceforge.net/xmms-fc/%{name}-%{version}.tar.bz2
@@ -21,6 +21,7 @@ music files from AMIGA.
 %setup -q
 
 %build
+export CPPFLAGS=-DFC_HAVE_IOS_BINARY
 %configure2_5x
 %make
 
