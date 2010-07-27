@@ -1,5 +1,5 @@
-%define version 0.5.4
-%define release %mkrel 3
+%define version 0.6
+%define release %mkrel 1
 
 Name: xmms-fc
 Summary: Future Composer plugin for XMMS
@@ -11,6 +11,7 @@ URL: http://xmms-fc.sourceforge.net/
 Source:	http://prdownloads.sourceforge.net/xmms-fc/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libxmms-devel
+BuildRequires: libfc14audiodecoder-devel
 Requires: xmms
 
 %description
@@ -28,14 +29,14 @@ export CPPFLAGS=-DFC_HAVE_IOS_BINARY
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-rm -f %buildroot%{_libdir}/xmms/Input/libfc.la
+rm -f %buildroot%{_libdir}/xmms/Input/fcdecoder.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README src/FC.README ChangeLog
-%{_libdir}/xmms/Input/libfc.so
+%doc README ChangeLog
+%{_libdir}/xmms/Input/fcdecoder.so
 
 
